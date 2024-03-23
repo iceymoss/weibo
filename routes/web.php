@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/user/add', function () {
+    User::create(['name'=> 'iceymoss', 'email'=>'ice_moss@163.com','password'=>bcrypt('123456')]);
+    return view('welcome');
+});
+
+
